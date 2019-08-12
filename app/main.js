@@ -76,8 +76,23 @@ const template = [
     submenu: [
       {
         label: "Open File",
+        accelerator: "CommandOrControl+O",
         click() {
-          console.log("Open File");
+          exports.getFileFromUser();
+        }
+      },
+      {
+        label: "Save File",
+        accelerator: "CommandOrControl+S",
+        click() {
+          mainWindow.webContents.send("save-markdown");
+        }
+      },
+      {
+        label: "Save HTML",
+        accelerator: "CommandOrControl+Shift+S",
+        click() {
+          mainWindow.webContents.send("save-html");
         }
       },
       {
