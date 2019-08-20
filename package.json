@@ -2,23 +2,28 @@
   "name": "firesale",
   "version": "1.0.0",
   "description": "A Frontend Masters Example Application",
+  "productName": "Fire sale",
   "main": "app/main.js",
   "dependencies": {
-    "electron": "^3.0.10",
+    "electron": "^3.1.13",
     "marked": "^0.5.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "devtron": "^1.4.0",
     "electron-packager": "^8.3.0",
-    "electron-rebuild": "^1.8.5",
+    "electron-rebuild": "^1.8.6",
     "eslint": "^3.11.0",
     "eslint-plugin-import": "^2.2.0"
   },
   "scripts": {
     "start": "electron .",
     "postinstall": "electron-rebuild",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build-mac",
+    "build-mac": "electron-packager . --out=\"build\" --overwrite",
+    "build-win": "electron-packager .",
+    "build-linux": "electron-packager ."
   },
   "repository": {
     "type": "git",
